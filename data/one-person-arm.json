@@ -1,0 +1,151 @@
+{
+  "subjects": [
+    {
+      "id": "one-treatment-0",
+      "stratum": "one",
+      "arm": "treatment",
+      "survival": {
+        "time": 20,
+        "event": true
+      },
+      "progression": {
+        "time": 10,
+        "event": true
+      },
+      "quality_change": 4
+    },
+    {
+      "id": "one-control-0",
+      "stratum": "one",
+      "arm": "control",
+      "survival": {
+        "time": 18,
+        "event": true
+      },
+      "progression": {
+        "time": 10,
+        "event": true
+      },
+      "quality_change": 1
+    },
+    {
+      "id": "one-control-1",
+      "stratum": "one",
+      "arm": "control",
+      "survival": {
+        "time": 25,
+        "event": false
+      },
+      "progression": {
+        "time": 13,
+        "event": true
+      },
+      "quality_change": 0
+    },
+    {
+      "id": "one-control-2",
+      "stratum": "one",
+      "arm": "control",
+      "survival": {
+        "time": 30,
+        "event": false
+      },
+      "progression": {
+        "time": 20,
+        "event": false
+      },
+      "quality_change": 3
+    },
+    {
+      "id": "two-treatment-0",
+      "stratum": "two",
+      "arm": "treatment",
+      "survival": {
+        "time": 20,
+        "event": true
+      },
+      "progression": {
+        "time": 10,
+        "event": true
+      },
+      "quality_change": 4
+    },
+    {
+      "id": "two-treatment-1",
+      "stratum": "two",
+      "arm": "treatment",
+      "survival": {
+        "time": 25,
+        "event": false
+      },
+      "progression": {
+        "time": 12,
+        "event": true
+      },
+      "quality_change": 2
+    },
+    {
+      "id": "two-treatment-2",
+      "stratum": "two",
+      "arm": "treatment",
+      "survival": {
+        "time": 30,
+        "event": false
+      },
+      "progression": {
+        "time": 20,
+        "event": false
+      },
+      "quality_change": null
+    },
+    {
+      "id": "two-control-0",
+      "stratum": "two",
+      "arm": "control",
+      "survival": {
+        "time": 18,
+        "event": true
+      },
+      "progression": {
+        "time": 10,
+        "event": true
+      },
+      "quality_change": 1
+    },
+    {
+      "id": "two-control-1",
+      "stratum": "two",
+      "arm": "control",
+      "survival": {
+        "time": 25,
+        "event": false
+      },
+      "progression": {
+        "time": 13,
+        "event": true
+      },
+      "quality_change": 0
+    },
+    {
+      "id": "two-control-2",
+      "stratum": "two",
+      "arm": "control",
+      "survival": {
+        "time": 30,
+        "event": false
+      },
+      "progression": {
+        "time": 20,
+        "event": false
+      },
+      "quality_change": 3
+    }
+  ],
+  "stratum_weights": {
+    "one": "2/5",
+    "two": "3/5"
+  },
+  "quality_tolerance": 1.0,
+  "normal_z": 1.95996398454,
+  "pair_block_size": 4
+}
