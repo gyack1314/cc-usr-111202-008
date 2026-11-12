@@ -4,4 +4,8 @@ id全局唯一；stratum为固定分析层，arm为treatment/control。survival�
 
 stratum_weights为预先给定且和为1的正分数，不根据组样本数改变。每层每一治疗与每一对照构成一个配对，U_w与U_l的分母均为全部跨组配对数，包括最终平局和不可比较。行/列向量样本协方差按人数减1归一；治疗与对照各独立抽样，不同层独立。W/L及其delta区间不把这种观察比较自动解释为因果。
 
-已有domain只清点分层人数和缺失，不比较配对或求投影方差。
+已有domain只清点分层人数和缺失；winratio负责配对比较与投影方差。
+
+配对优先级固定为生存、无进展、生活质量，逐对从治疗组视角记录win/loss/tie/incomparable。时间层较早的已观察事件为劣势；两个已观察事件同刻为确定平局；事件与删失同刻、较早日期的删失、两个删失均为未知。未知时整对不可比较，不继续比较低优先级结局。生活质量差值严格大于quality_tolerance才分胜负，落在闭区间内为最终平局，任一缺失则不可比较。
+
+输出中的covariance_components给出每层治疗行与对照列各自的投影协方差，covariance为其和；overall的covariance按层权重平方合成。逐人投影按id排序并给出精确分数与浮点均值，可直接重算。pair_block_size仅影响流式枚举的执行方式。每层任一组少于2人时，该层不进入方差合成；只要有这样的层，overall.status为point_estimate_only，点估计照常列出。W=0或L=0时为boundary_*状态，不采用0.5连续性修正，也不输出区间。
